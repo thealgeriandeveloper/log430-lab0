@@ -41,3 +41,8 @@ Une fois configuré, le runner a été démarré et confirmé être Online dans 
 
 ![Alt text](question4-1.png)
 
+Après cela, un workflow CD a été ajouté au repo dans le fichier .github/workflows/cd.yml et configuré pour se déclencher automatiquement à chaque push un peu comme le CI. Ce workflow utilise runs-on: self-hosted, ce qui force GitHub Actions à exécuter le job sur la VM. Le job commence par récupérer le code du repo avec l'étape checkout, puis exécute des commandes de validation.
+
+![Alt text](question4-5.png)
+![Alt text](question4-6.png)
+
