@@ -31,4 +31,13 @@ La commande top sert à surveiller en temps réel l'état de la VM et la consomm
 ![Alt text](question3-1.png)
 
 # Déploiement
-(Le cas échéant, décrivez votre pipeline CI/CD et ce que vous avez appris dans ce laboratoire en ce qui concerne le déploiement. Il est obligatoire d'ajouter du code, des captures d'écran ou des sorties de terminal pour illustrer votre réponse.)
+Dans ce laboratoire, le déploiement continu a été automatisé à l'aide d'un GitHub Runner self-hosted installé directement sur la VM. L'idée est que le job GitHub Actions ne s'exécute pas sur un runner cloud, mais sur la VM elle-même, ce qui permet de déployer sans ouvrir de ports supplémentaires et sans dépendre d'un mécanisme de webhook externe. Après l'installation des dépendances du runner, un utilisateur a été créé pour respecter la contrainte du runner (ne pas être exécuté en sudo), puis le runner a été enregistré sur le dépôt GitHub avec le script config.sh en fournissant l'URL du repo et un token d'inscription. 
+
+![Alt text](question4-2.png)
+![Alt text](question4-3.png)
+![Alt text](question4-4.png)
+
+Une fois configuré, le runner a été démarré et confirmé être Online dans l'interface GitHub:
+
+![Alt text](question4-1.png)
+

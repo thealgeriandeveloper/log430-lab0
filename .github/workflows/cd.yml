@@ -1,0 +1,24 @@
+name: CD
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy (pull + preuve)
+        shell: bash
+        run: |
+          set -e
+          echo "Runner host: $(hostname)"
+          echo "Repo: $GITHUB_REPOSITORY"
+          echo "Commit: $GITHUB_SHA"
+
+          # Preuve que le code est bien celui du push
+          git rev-parse --short HEAD
+          git log -1 --oneline
