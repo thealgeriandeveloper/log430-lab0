@@ -14,3 +14,7 @@ def test_app():
 def test_addition():
     my_calculator = Calculator()
     assert my_calculator.addition(2, 3) == 5
+
+def test_addition_fails():
+    my_calculator = Calculator()
+    assert my_calculator.addition(2, 2) == 5
